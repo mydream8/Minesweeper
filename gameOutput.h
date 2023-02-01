@@ -3,14 +3,15 @@
 #include <stdio.h>
 #include "space.h"
 #include <stdbool.h>
+#include "info.h"
 
 /*
 * 文件名：gameInputOutput.h
 * 文件版本:v1.0
 * 编写者：mydream8
 * 编写日期：2023.1.24
-* 完成日期：
-* 文件说明：负责游戏输出的函数，宏,处理外部棋盘
+* 完成日期：2023.1.31
+* 文件说明：负责游戏输出的函数，宏,处理外部棋盘,原来打算包含游戏输入函数，但最后觉得单独放在gameInput.h里
 * 编写工具：Visual Studio 2022
 * 此程序为开源程序
 */
@@ -155,17 +156,3 @@ void putSpaceOut(mineBoxIn spaceIn[ROW][LINE], outMineBox spaceOut[ROW][LINE], r
 #error OTHER_CONPILER常量值异常
 #endif
 
-//van家输入
-#if 0==OTHER_CONPILER
-
-#elif 1==OTHER_CONPILER
-#define printf_s printf
-#define scanf_s scanf
-
-#undef printf_s
-#undef scanf_s
-
-#else
-#error
-	#error OTHER_CONPILER常量值异常
-#endif

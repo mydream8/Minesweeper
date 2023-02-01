@@ -134,9 +134,9 @@
     <ClCompile Include="main.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="gameInput.h" />
     <ClInclude Include="gameOutput.h" />
     <ClInclude Include="info.h" />
-    <ClInclude Include="input.h" />
     <ClInclude Include="isWinner.h" />
     <ClInclude Include="mine.h" />
     <ClInclude Include="space.h" />
