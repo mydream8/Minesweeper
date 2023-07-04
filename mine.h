@@ -1,13 +1,19 @@
-#pragma once
-#define MINE -1 //ÔÚÊı×éÖĞÀ×µÄÊıÖµ
+ï»¿#pragma once
+#define MINE -1 //åœ¨æ•°ç»„ä¸­é›·çš„æ•°å€¼
 #define MINE_NUM 10
 /*
-* ÎÄ¼şÃû£ºmine.h
-* ÎÄ¼ş°æ±¾:v1.0
-* ±àĞ´Õß£ºmydream8
-* ±àĞ´ÈÕÆÚ£º2023.1.24
-* Íê³ÉÈÕÆÚ£º
-* ÎÄ¼şËµÃ÷£º¸ºÔğÓÎÏ·Éú³ÉÀ×µÄº¯Êı£¬ºê
-* ±àĞ´¹¤¾ß£ºVisual Studio 2022
-* ´Ë³ÌĞòÎª¿ªÔ´³ÌĞò
+* æ–‡ä»¶åï¼šmine.h
+* æ–‡ä»¶ç‰ˆæœ¬:v1.0
+* ç¼–å†™è€…ï¼šmydream8
+* ç¼–å†™æ—¥æœŸï¼š2023.1.24
+* å®Œæˆæ—¥æœŸï¼š
+* æ–‡ä»¶è¯´æ˜ï¼šè´Ÿè´£æ¸¸æˆç”Ÿæˆé›·çš„å‡½æ•°ï¼Œå®
+* ç¼–å†™å·¥å…·ï¼šVisual Studio 2022
+* æ­¤ç¨‹åºä¸ºå¼€æºç¨‹åº
 */
+
+//void makeMine(rowAxis firstBoxRow, lineAxis firstBoxLine, rowType row, lineType line, mineBoxIn spaceIn[ROW][LINE], int mineMum)
+//{
+//
+//}
+////ç”Ÿæˆé›·
