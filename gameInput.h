@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include <stdio.h>
 #include "info.h"
 #include <assert.h>
@@ -6,45 +6,45 @@
 #include "gameOutput.h"
 
 /*
-* ÎÄ¼şÃû:gameInput.h
-* ±àĞ´Õß£ºmydream8
-* ´´½¨Ê±¼ä£º2023.2.1
-* Íê³ÉÊ±¼ä:
-* ÎÄ¼şÃèÊö£º¸ºÔğÓÎÏ·ÊäÈëµÄº¯Êı£¬×Ô¶¨ÒåÊı¾İÀàĞÍ
-* ¹¦ÄÜ¹ı³ÌÃèÊö£º´òÓ¡²Ù×÷ÌáÊ¾=¡·van¼ÒÊäÈë=¡·Ğ´ÈëÍâ²¿ÆåÅÌ
-* ±àĞ´¹¤¾ß£ºVisual Studio 2022
-* ´Ë³ÌĞòÎª¿ªÔ´³ÌĞò
+* æ–‡ä»¶å:gameInput.h
+* ç¼–å†™è€…ï¼šmydream8
+* åˆ›å»ºæ—¶é—´ï¼š2023.2.1
+* å®Œæˆæ—¶é—´:
+* æ–‡ä»¶æè¿°ï¼šè´Ÿè´£æ¸¸æˆè¾“å…¥çš„å‡½æ•°ï¼Œè‡ªå®šä¹‰æ•°æ®ç±»å‹
+* åŠŸèƒ½è¿‡ç¨‹æè¿°ï¼šæ‰“å°æ“ä½œæç¤º=ã€‹vanå®¶è¾“å…¥=ã€‹å†™å…¥å¤–éƒ¨æ£‹ç›˜
+* ç¼–å†™å·¥å…·ï¼šVisual Studio 2022
+* æ­¤ç¨‹åºä¸ºå¼€æºç¨‹åº
 */
 
-//ÊäÈëÀàĞÍ
+//è¾“å…¥ç±»å‹
 typedef enum inputKind
 {
 	open=1,
-	//´ò¿ªÒ»¸ñ
+	//æ‰“å¼€ä¸€æ ¼
 	makeFlag,
-	//²åÆì
+	//æ’æ——
 	ask
-	//´òÎÊºÅ
+	//æ‰“é—®å·
 }inputKind;
 
-//×ø±êÀàĞÍ
+//åæ ‡ç±»å‹
 typedef int rowAxis;
 typedef int lineAxis;
 
 #if 0==OTHER_CONPILER
 #define printf printf
 #define scanf scanf_s
-//´òÓ¡ÌáÊ¾ĞÅÏ¢
+//æ‰“å°æç¤ºä¿¡æ¯
 static void printCue(const char* cue)
 {
 	printf_s(cue);
 }
 
-//´òÓ¡ÏÂ»®ÏßºÍÌáÊ¾·û
+//æ‰“å°ä¸‹åˆ’çº¿å’Œæç¤ºç¬¦
 static void printUnder(const int lineNum)
 {
 	printf_s(">");
-	int i = 0;//Ñ­»·¼ÇÊı
+	int i = 0;//å¾ªç¯è®°æ•°
 	for (; i < lineNum; i++)
 	{
 		printf_s("_");
@@ -55,25 +55,25 @@ static void printUnder(const int lineNum)
 	}
 }
 
-//ÊäÈëĞÅÏ¢
+//è¾“å…¥ä¿¡æ¯
 static void inputInfo(lineAxis* line, rowAxis* row, inputKind* kind,rowType rowLong,lineType lineLong,const char* cue,const int lineNum)
 {
-	assert(line && row && kind);//±£Ö¤²»Îª¿ÕÖ¸Õë
+	assert(line && row && kind);//ä¿è¯ä¸ä¸ºç©ºæŒ‡é’ˆ
 	short errorNum = 0;
 	do
 	{
 		if (errorNum)
 		{
-			printf_s("ÊäÈë´íÎó\n");
+			printf_s("è¾“å…¥é”™è¯¯\n");
 		}
 		printCue(cue);
 		printUnder(lineNum);
-		scanf_s("%d%*c%d%*c%d", line, row, kind);//ÏÈÁĞºóĞĞºó²Ù×÷
+		scanf_s("%d%*c%d%*c%d", line, row, kind);//å…ˆåˆ—åè¡Œåæ“ä½œ
 		assert(EOF != getchar());
 	} while (++errorNum,!*line||!*row||*line>lineLong||*row>rowLong||*kind<open||*kind>qus);
 }
 
-//Ğ´ÈëÍâ²¿ÆåÅÌ-²»Öª¼ÓÉÏconstĞŞÊÎÊÇ·ñ¿ÉĞĞ
+//å†™å…¥å¤–éƒ¨æ£‹ç›˜-ä¸çŸ¥åŠ ä¸Šconstä¿®é¥°æ˜¯å¦å¯è¡Œ
 static void writeOutSpace(outMineBox outSpace[ROW][LINE],const lineAxis line,const rowAxis row,const inputKind kind)
 {
 	switch (kind)
@@ -90,7 +90,7 @@ static void writeOutSpace(outMineBox outSpace[ROW][LINE],const lineAxis line,con
 	}
 }
 
-//ÊäÈë´¦Àí
+//è¾“å…¥å¤„ç†
 outMineBox* playerInput(outMineBox outSpace[ROW][LINE], const char* cue, const int lineNum,rowType rowLong, lineType lineLong)
 {
 	lineAxis line = 0;
@@ -106,17 +106,17 @@ outMineBox* playerInput(outMineBox outSpace[ROW][LINE], const char* cue, const i
 #elif 1==OTHER_CONPILER
 #define printf_s printf
 #define scanf_s scanf
-//´òÓ¡ÌáÊ¾ĞÅÏ¢
+//æ‰“å°æç¤ºä¿¡æ¯
 static void printCue(const char* cue)
 {
 	printf_s(cue);
 }
 
-//´òÓ¡ÏÂ»®ÏßºÍÌáÊ¾·û
+//æ‰“å°ä¸‹åˆ’çº¿å’Œæç¤ºç¬¦
 static void printUnder(const int lineNum)
 {
 	printf_s(">");
-	int i = 0;//Ñ­»·¼ÇÊı
+	int i = 0;//å¾ªç¯è®°æ•°
 	for (; i < lineNum; i++)
 	{
 		printf_s("_");
@@ -127,25 +127,25 @@ static void printUnder(const int lineNum)
 	}
 }
 
-//ÊäÈëĞÅÏ¢
+//è¾“å…¥ä¿¡æ¯
 static void inputInfo(lineAxis* line, rowAxis* row, inputKind* kind, rowType rowLong, lineType lineLong, const char* cue, const int lineNum)
 {
-	assert(line && row && kind);//±£Ö¤²»Îª¿ÕÖ¸Õë
+	assert(line && row && kind);//ä¿è¯ä¸ä¸ºç©ºæŒ‡é’ˆ
 	short errorNum = 0;
 	do
 	{
 		if (errorNum)
 		{
-			printf_s("ÊäÈë´íÎó\n");
+			printf_s("è¾“å…¥é”™è¯¯\n");
 		}
 		printCue(cue);
 		printUnder(lineNum);
-		scanf_s("%d%*c%d%*c%d", line, row, kind);//ÏÈÁĞºóĞĞºó²Ù×÷
+		scanf_s("%d%*c%d%*c%d", line, row, kind);//å…ˆåˆ—åè¡Œåæ“ä½œ
 		assert(EOF != getchar());
 	} while (++errorNum, !*line || !*row || *line > lineLong || *row > rowLong || *kind<open || *kind>qus);
 }
 
-//Ğ´ÈëÍâ²¿ÆåÅÌ-²»Öª¼ÓÉÏconstĞŞÊÎÊÇ·ñ¿ÉĞĞ
+//å†™å…¥å¤–éƒ¨æ£‹ç›˜-ä¸çŸ¥åŠ ä¸Šconstä¿®é¥°æ˜¯å¦å¯è¡Œ
 static void writeOutSpace(outMineBox outSpace[ROW][LINE], const lineAxis line, const rowAxis row, const inputKind kind)
 {
 	switch (kind)
@@ -162,7 +162,7 @@ static void writeOutSpace(outMineBox outSpace[ROW][LINE], const lineAxis line, c
 	}
 }
 
-//ÊäÈë´¦Àí
+//è¾“å…¥å¤„ç†
 outMineBox* playerInput(outMineBox outSpace[ROW][LINE], const char* cue, const int lineNum, rowType rowLong, lineType lineLong)
 {
 	lineAxis line = 0;
@@ -176,5 +176,5 @@ outMineBox* playerInput(outMineBox outSpace[ROW][LINE], const char* cue, const i
 #undef scanf
 
 #else 
-#error OTHER_CONPILER³£Á¿ÖµÒì³£
+#error OTHER_CONPILERå¸¸é‡å€¼å¼‚å¸¸
 #endif

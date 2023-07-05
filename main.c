@@ -1,4 +1,4 @@
-#include "space.h"
+ï»¿#include "space.h"
 #include "isWinner.h"
 #include "mine.h"
 #include "gameOutput.h"
@@ -9,7 +9,7 @@
 
 int main(void)
 {
-	//ÊäÈë²âÊÔ
+	//è¾“å…¥æµ‹è¯•
 	mineBoxIn space[ROW][LINE] = { {0,8} };
 	outMineBox outSpace[ROW][LINE] = { {0,0} };
 	lineAxis line = 2;
@@ -18,7 +18,7 @@ int main(void)
 	playerInput(outSpace, "what", 10, ROW, LINE);
 	putSpaceOut(space, outSpace, ROW, LINE);
 
-	//´òÓ¡²âÊÔ
+	//æ‰“å°æµ‹è¯•
 	/*outMineBox out [ROW][LINE] = { {0,1,2,3} };
 	mineBoxIn in [ROW][LINE] = { {0,7} };
 	putSpaceOut(in, out, ROW, LINE);*/

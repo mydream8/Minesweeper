@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include <stdio.h>
 #include "space.h"
@@ -6,21 +6,21 @@
 #include "info.h"
 
 /*
-* ÎÄ¼şÃû£ºgameInputOutput.h
-* ÎÄ¼ş°æ±¾:v1.0
-* ±àĞ´Õß£ºmydream8
-* ±àĞ´ÈÕÆÚ£º2023.1.24
-* Íê³ÉÈÕÆÚ£º2023.1.31
-* ÎÄ¼şËµÃ÷£º¸ºÔğÓÎÏ·Êä³öµÄº¯Êı£¬ºê,´¦ÀíÍâ²¿ÆåÅÌ,Ô­À´´òËã°üº¬ÓÎÏ·ÊäÈëº¯Êı£¬µ«×îºó¾õµÃµ¥¶À·ÅÔÚgameInput.hÀï
-* ±àĞ´¹¤¾ß£ºVisual Studio 2022
-* ´Ë³ÌĞòÎª¿ªÔ´³ÌĞò
+* æ–‡ä»¶åï¼šgameInputOutput.h
+* æ–‡ä»¶ç‰ˆæœ¬:v1.0
+* ç¼–å†™è€…ï¼šmydream8
+* ç¼–å†™æ—¥æœŸï¼š2023.1.24
+* å®Œæˆæ—¥æœŸï¼š2023.1.31
+* æ–‡ä»¶è¯´æ˜ï¼šè´Ÿè´£æ¸¸æˆè¾“å‡ºçš„å‡½æ•°ï¼Œå®,å¤„ç†å¤–éƒ¨æ£‹ç›˜,åŸæ¥æ‰“ç®—åŒ…å«æ¸¸æˆè¾“å…¥å‡½æ•°ï¼Œä½†æœ€åè§‰å¾—å•ç‹¬æ”¾åœ¨gameInput.hé‡Œ
+* ç¼–å†™å·¥å…·ï¼šVisual Studio 2022
+* æ­¤ç¨‹åºä¸ºå¼€æºç¨‹åº
 */
 
-//Íâ²¿ÆåÅÌÀàĞÍ
+//å¤–éƒ¨æ£‹ç›˜ç±»å‹
 typedef short outMineBox;
-//ÏÂ»®ÏßÊıÁ¿
+//ä¸‹åˆ’çº¿æ•°é‡
 #define INPUT_UNDERLINE 3
-//Íâ²¿ÆåÅÌ¸ñ×Ó×´Ì¬
+//å¤–éƒ¨æ£‹ç›˜æ ¼å­çŠ¶æ€
 typedef enum outBoxStatus
 {
 	nothing = 0,
@@ -29,44 +29,44 @@ typedef enum outBoxStatus
 	qus
 }outBoxStatus;
 
-//´òÓ¡ÆåÅÌ
+//æ‰“å°æ£‹ç›˜
 #if 0==OTHER_CONPILER
 
 
 
-//¶Ô¸ñ×ÓµÄÅĞ¶Ï
+//å¯¹æ ¼å­çš„åˆ¤æ–­
 static void isBoxNum(mineBoxIn spaceIn[ROW][LINE], outMineBox spaceOut[ROW][LINE], rowType row, lineType line)
 {
-	if (opener == spaceOut[row][line])//ÅĞ¶ÏÕâ¸öÎ»ÖÃÊÇ·ñÒÑ¾­´ò¿ª
+	if (opener == spaceOut[row][line])//åˆ¤æ–­è¿™ä¸ªä½ç½®æ˜¯å¦å·²ç»æ‰“å¼€
 	{
-		if (!spaceIn[row][line])//¿Õ¸ñ×Ó
+		if (!spaceIn[row][line])//ç©ºæ ¼å­
 		{
 			printf_s(" ");
 		}
-		else if (-1 != spaceIn[row][line])//Êı×Ö¸ñ×Ó
+		else if (-1 != spaceIn[row][line])//æ•°å­—æ ¼å­
 		{
 			printf_s("%d", spaceIn[row][line]);
 		}
-		else//À×
+		else//é›·
 		{
 			printf_s("*");
 		}
 	}
-	else if (flag == spaceOut[row][line])//Æì×Ó
+	else if (flag == spaceOut[row][line])//æ——å­
 	{
 		printf_s("!");
 	}
-	else if (qus == spaceOut[row][line])//ÎÊºÅ¸ñ×Ó
+	else if (qus == spaceOut[row][line])//é—®å·æ ¼å­
 	{
 		printf_s("?");
 	}
-	else//Ã»ÓĞ²Ù×÷¹ıµÄ¸ñ×Ó
+	else//æ²¡æœ‰æ“ä½œè¿‡çš„æ ¼å­
 	{
 		printf("#");
 	}
 }
 
-//´òÓ¡¸ñ×Ó
+//æ‰“å°æ ¼å­
 static void printMineBox(mineBoxIn spaceIn[ROW][LINE], outMineBox spaceOut[ROW][LINE],rowType row,lineType line)
 {
 	for (int i = 0; i < row;i++)
@@ -81,10 +81,10 @@ static void printMineBox(mineBoxIn spaceIn[ROW][LINE], outMineBox spaceOut[ROW][
 		printf_s("\n");
 	}
 }
-//´òÓ¡Íæ¼Ò¿´µ½µÄÆåÅÌ-Íâ²¿ÆåÅÌflaseÎªÃ»¿ª£¬tureÎª¿ª
+//æ‰“å°ç©å®¶çœ‹åˆ°çš„æ£‹ç›˜-å¤–éƒ¨æ£‹ç›˜flaseä¸ºæ²¡å¼€ï¼Œtureä¸ºå¼€
 void putSpaceOut(mineBoxIn spaceIn[ROW][LINE], outMineBox spaceOut[ROW][LINE],rowType row,lineType line)
 {
-	for (int i = 1; i <= line; i++)//´òÓ¡ÆåÅÌÉÏ·½µÄ±ê³ß
+	for (int i = 1; i <= line; i++)//æ‰“å°æ£‹ç›˜ä¸Šæ–¹çš„æ ‡å°º
 	{
 		printf_s(" %d", i);
 	}
@@ -93,39 +93,39 @@ void putSpaceOut(mineBoxIn spaceIn[ROW][LINE], outMineBox spaceOut[ROW][LINE],ro
 }
 #elif 1 == OTHER_CONPILER
 #define printf_s printf
-//¶Ô¸ñ×ÓµÄÅĞ¶Ï
+//å¯¹æ ¼å­çš„åˆ¤æ–­
 static void isBoxNum(mineBoxIn spaceIn[ROW][LINE], outMineBox spaceOut[ROW][LINE], rowType row, lineType line)
 {
-	if (1 == spaceOut[row][line])//ÅĞ¶ÏÕâ¸öÎ»ÖÃÊÇ·ñÒÑ¾­´ò¿ª
+	if (1 == spaceOut[row][line])//åˆ¤æ–­è¿™ä¸ªä½ç½®æ˜¯å¦å·²ç»æ‰“å¼€
 	{
-		if (!spaceIn[row][line])//¿Õ¸ñ×Ó
+		if (!spaceIn[row][line])//ç©ºæ ¼å­
 		{
 			printf_s(" ");
 		}
-		else if (-1 != spaceIn[row][line])//Êı×Ö¸ñ×Ó
+		else if (-1 != spaceIn[row][line])//æ•°å­—æ ¼å­
 		{
 			printf_s("%d", spaceIn[row][line]);
 		}
-		else//À×
+		else//é›·
 		{
 			printf_s("*");
 		}
 	}
-	else if (2 == spaceOut[row][line])//Æì×Ó
+	else if (2 == spaceOut[row][line])//æ——å­
 	{
 		printf_s("!");
 	}
-	else if (3 == spaceOut[row][line])//ÎÊºÅ¸ñ×Ó
+	else if (3 == spaceOut[row][line])//é—®å·æ ¼å­
 	{
 		printf_s("?");
 	}
-	else//Ã»ÓĞ²Ù×÷¹ıµÄ¸ñ×Ó
+	else//æ²¡æœ‰æ“ä½œè¿‡çš„æ ¼å­
 	{
 		printf("#");
 	}
 }
 
-//´òÓ¡¸ñ×Ó
+//æ‰“å°æ ¼å­
 static void printMineBox(mineBoxIn spaceIn[ROW][LINE], outMineBox spaceOut[ROW][LINE], rowType row, lineType line)
 {
 	for (int i = 0; i < row; i++)
@@ -140,10 +140,10 @@ static void printMineBox(mineBoxIn spaceIn[ROW][LINE], outMineBox spaceOut[ROW][
 		printf_s("\n");
 	}
 }
-//´òÓ¡Íæ¼Ò¿´µ½µÄÆåÅÌ-Íâ²¿ÆåÅÌflaseÎªÃ»¿ª£¬tureÎª¿ª
+//æ‰“å°ç©å®¶çœ‹åˆ°çš„æ£‹ç›˜-å¤–éƒ¨æ£‹ç›˜flaseä¸ºæ²¡å¼€ï¼Œtureä¸ºå¼€
 void putSpaceOut(mineBoxIn spaceIn[ROW][LINE], outMineBox spaceOut[ROW][LINE], rowType row, lineType line)
 {
-	for (int i = 1; i <= line; i++)//´òÓ¡ÆåÅÌÉÏ·½µÄ±ê³ß
+	for (int i = 1; i <= line; i++)//æ‰“å°æ£‹ç›˜ä¸Šæ–¹çš„æ ‡å°º
 	{
 		printf_s("%d", i);
 	}
@@ -153,6 +153,6 @@ void putSpaceOut(mineBoxIn spaceIn[ROW][LINE], outMineBox spaceOut[ROW][LINE], r
 #undef printf_s
 
 #else
-#error OTHER_CONPILER³£Á¿ÖµÒì³£
+#error OTHER_CONPILERå¸¸é‡å€¼å¼‚å¸¸
 #endif
 

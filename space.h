@@ -1,13 +1,13 @@
-#pragma once
+ï»¿#pragma once
 /*
-* ÎÄ¼şÃû£ºspace.h
-* ÎÄ¼ş°æ±¾:v1.0
-* ±àĞ´Õß£ºmydream8
-* ±àĞ´ÈÕÆÚ£º2023.1.24
-* Íê³ÉÈÕÆÚ£º
-* ÎÄ¼şËµÃ÷£º¸ºÔğÉú³ÉÆåÅÌµÄº¯Êı£¬ºê,´¦ÀíÄÚ²¿ÆåÅÌºÍÄ³Ğ©ÆåÅÌµÄÈ«¾ÖÀàĞÍ¶¨Òå
-* ±àĞ´¹¤¾ß£ºVisual Studio 2022
-* ´Ë³ÌĞòÎª¿ªÔ´³ÌĞò
+* æ–‡ä»¶åï¼šspace.h
+* æ–‡ä»¶ç‰ˆæœ¬:v1.0
+* ç¼–å†™è€…ï¼šmydream8
+* ç¼–å†™æ—¥æœŸï¼š2023.1.24
+* å®Œæˆæ—¥æœŸï¼š
+* æ–‡ä»¶è¯´æ˜ï¼šè´Ÿè´£ç”Ÿæˆæ£‹ç›˜çš„å‡½æ•°ï¼Œå®,å¤„ç†å†…éƒ¨æ£‹ç›˜å’ŒæŸäº›æ£‹ç›˜çš„å…¨å±€ç±»å‹å®šä¹‰
+* ç¼–å†™å·¥å…·ï¼šVisual Studio 2022
+* æ­¤ç¨‹åºä¸ºå¼€æºç¨‹åº
 */
 
 #include <stdio.h>
@@ -16,14 +16,14 @@
 #include <malloc.h>
 #include <assert.h>
 
-#define ROW 10 //ĞĞ
-#define LINE 10 //ÁĞ-½¨ÒéµÈÓÚ»òĞ¡ÓÚ10£¬·ñÔò´òÓ¡³öÀ´·Ç³£ÄÑ¿´
+#define ROW 10 //è¡Œ
+#define LINE 10 //åˆ—-å»ºè®®ç­‰äºæˆ–å°äº10ï¼Œå¦åˆ™æ‰“å°å‡ºæ¥éå¸¸éš¾çœ‹
 
-typedef  const int rowType;//±£Ö¤ĞĞÍ³Ò»°´const int´¦Àí
-typedef const int lineType;//±£Ö¤ÁĞÍ³Ò»°´const int´¦Àí
+typedef  const int rowType;//ä¿è¯è¡Œç»Ÿä¸€æŒ‰const intå¤„ç†
+typedef const int lineType;//ä¿è¯åˆ—ç»Ÿä¸€æŒ‰const intå¤„ç†
 
 typedef short int mineBoxIn;
-//×÷ÎªÒ»¸öÄÚ²¿ÆåÅÌ¸ñ×ÓµÄÀàĞÍ
+//ä½œä¸ºä¸€ä¸ªå†…éƒ¨æ£‹ç›˜æ ¼å­çš„ç±»å‹
 
 mineBoxIn* makeSpaceIn(rowType row, lineType line)
 {
