@@ -106,17 +106,29 @@ outMineBox* playerInput(outMineBox outSpace[ROW][LINE], const char* cue, const i
 #elif 1==OTHER_CONPILER
 #define printf_s printf
 #define scanf_s scanf
+<<<<<<< HEAD
 //打印提示信息
+=======
+//��ӡ��ʾ��Ϣ
+>>>>>>> 410a1c8cc96d06fe8c8ba77e3e262c88f1ae9633
 static void printCue(const char* cue)
 {
 	printf_s(cue);
 }
 
+<<<<<<< HEAD
 //打印下划线和提示符
 static void printUnder(const int lineNum)
 {
 	printf_s(">");
 	int i = 0;//循环记数
+=======
+//��ӡ�»��ߺ���ʾ��
+static void printUnder(const int lineNum)
+{
+	printf_s(">");
+	int i = 0;//ѭ������
+>>>>>>> 410a1c8cc96d06fe8c8ba77e3e262c88f1ae9633
 	for (; i < lineNum; i++)
 	{
 		printf_s("_");
@@ -127,25 +139,44 @@ static void printUnder(const int lineNum)
 	}
 }
 
+<<<<<<< HEAD
 //输入信息
 static void inputInfo(lineAxis* line, rowAxis* row, inputKind* kind, rowType rowLong, lineType lineLong, const char* cue, const int lineNum)
 {
 	assert(line && row && kind);//保证不为空指针
+=======
+//������Ϣ
+static void inputInfo(lineAxis* line, rowAxis* row, inputKind* kind, rowType rowLong, lineType lineLong, const char* cue, const int lineNum)
+{
+	assert(line && row && kind);//��֤��Ϊ��ָ��
+>>>>>>> 410a1c8cc96d06fe8c8ba77e3e262c88f1ae9633
 	short errorNum = 0;
 	do
 	{
 		if (errorNum)
 		{
+<<<<<<< HEAD
 			printf_s("输入错误\n");
 		}
 		printCue(cue);
 		printUnder(lineNum);
 		scanf_s("%d%*c%d%*c%d", line, row, kind);//先列后行后操作
+=======
+			printf_s("�������\n");
+		}
+		printCue(cue);
+		printUnder(lineNum);
+		scanf_s("%d%*c%d%*c%d", line, row, kind);//���к��к����
+>>>>>>> 410a1c8cc96d06fe8c8ba77e3e262c88f1ae9633
 		assert(EOF != getchar());
 	} while (++errorNum, !*line || !*row || *line > lineLong || *row > rowLong || *kind<open || *kind>qus);
 }
 
+<<<<<<< HEAD
 //写入外部棋盘-不知加上const修饰是否可行
+=======
+//д���ⲿ����-��֪����const�����Ƿ����
+>>>>>>> 410a1c8cc96d06fe8c8ba77e3e262c88f1ae9633
 static void writeOutSpace(outMineBox outSpace[ROW][LINE], const lineAxis line, const rowAxis row, const inputKind kind)
 {
 	switch (kind)
@@ -162,7 +193,11 @@ static void writeOutSpace(outMineBox outSpace[ROW][LINE], const lineAxis line, c
 	}
 }
 
+<<<<<<< HEAD
 //输入处理
+=======
+//���봦��
+>>>>>>> 410a1c8cc96d06fe8c8ba77e3e262c88f1ae9633
 outMineBox* playerInput(outMineBox outSpace[ROW][LINE], const char* cue, const int lineNum, rowType rowLong, lineType lineLong)
 {
 	lineAxis line = 0;
