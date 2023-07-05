@@ -27,6 +27,7 @@ typedef enum inputKind
 //坐标类型
 typedef int rowAxis;
 typedef int lineAxis;
+//原来用两个变量来计算坐标的，现在统一用一个变量通过与首元素地址的偏离量来计算-axis
 
 #if 0==OTHER_CONPILER
 #define printf printf

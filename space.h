@@ -21,13 +21,14 @@
 
 typedef  const int rowType;//保证行统一按const int处理
 typedef const int lineType;//保证列统一按const int处理
+typedef int axis;//
 
 typedef short int mineBoxIn;
 //作为一个内部棋盘格子的类型
 
 mineBoxIn* makeSpaceIn(rowType row, lineType line)
 {
-	mineBoxIn* pSpaceIn = (mineBoxIn*)calloc(row * line, sizeof(mineBoxIn));
+	mineBoxIn* pSpaceIn = (mineBoxIn*)calloc((size_t)(row * line), sizeof(mineBoxIn));
 	assert(pSpaceIn);
 	return pSpaceIn;
 }
