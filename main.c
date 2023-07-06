@@ -3,7 +3,7 @@
 #include "mine.h"
 #include "gameOutput.h"
 #include "gameInput.h"
-
+#include "isWinner.h"
 
 
 
@@ -24,20 +24,45 @@ int main(void)
 	putSpaceOut(in, out, ROW, LINE);*/
 
 	//生成雷的测试
-	mineBoxIn spaceIn[ROW][LINE] = { 0 };
-	makeMine(0, ROW, LINE, spaceIn, MINE_NUM);
-	for (int i = 0; i < ROW; i++)
+	//mineBoxIn spaceIn[ROW][LINE] = { 0 };
+	//makeMine(0, ROW, LINE, spaceIn, MINE_NUM);
+	//for (int i = 0; i < ROW; i++)
+	//{
+	//	for (int j = 0; j < LINE;j++)
+	//	{
+	//		if (MINE == spaceIn[i][j])
+	//			printf("* ");
+	//		else
+	//			printf("%d ", spaceIn[i][j]);
+	//	}
+	//	printf("\n");
+	//}
+	////问题-不能对最后一行进行周围格子修改
+
+	//输赢检测函数的检测
+	mineBoxIn spaceIn[ROW][LINE] = { {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1} };
+	outMineBox outSpace[ROW][LINE] = { {0,0} };
+	for (int i = 1; i < ROW; i++)
 	{
-		for (int j = 0; j < LINE;j++)
+		for (int j = 0; j < LINE; j++)
 		{
-			if (MINE == spaceIn[i][j])
-				printf("* ");
-			else
-				printf("%d ", spaceIn[i][j]);
+			outSpace[i][j] = opener;
 		}
-		printf("\n");
 	}
-	//问题-不能对最后一行进行周围格子修改
+	putSpaceOut(spaceIn, outSpace, ROW, LINE);
+	winOrLose loseOrWin=isWin(spaceIn, outSpace, ROW, LINE);
+	if (loseOrWin == lose)
+	{
+		printf("lose");
+	}
+	else if (loseOrWin == draw)
+	{
+		printf("draw");
+	}
+	else if (loseOrWin == win)
+	{
+		printf("win");
+	}
 
 	return 0;
 }

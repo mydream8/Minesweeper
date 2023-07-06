@@ -54,7 +54,7 @@ static void printUnder(const int lineNum)
 }
 
 //输入信息
-static void inputInfo(lineAxis* line, rowAxis* row, inputKind* kind, rowType rowLong, lineType lineLong, const char* cue, const int lineNum)
+static axis inputInfo(lineAxis* line, rowAxis* row, inputKind* kind, rowType rowLong, lineType lineLong, const char* cue, const int lineNum)
 {
 	assert(line && row && kind);//保证不为空指针
 	short errorNum = 0;
@@ -69,6 +69,7 @@ static void inputInfo(lineAxis* line, rowAxis* row, inputKind* kind, rowType row
 		scanf_s("%d%*c%d%*c%d", line, row, kind);//先列后行后操作
 		assert(EOF != getchar());
 	} while (++errorNum, !*line || !*row || *line > lineLong || *row > rowLong || *kind<open || *kind>qus);
+	return ((*row - 1) * lineLong) + (*line - 1);
 }
 
 //写入外部棋盘-不知加上const修饰是否可行
@@ -89,14 +90,16 @@ static void writeOutSpace(outMineBox outSpace[ROW][LINE], const lineAxis line, c
 }
 
 //输入处理
-outMineBox* playerInput(outMineBox outSpace[ROW][LINE], const char* cue, const int lineNum, rowType rowLong, lineType lineLong)
+/*outMineBox**/ axis playerInput(outMineBox outSpace[ROW][LINE], const char* cue, const int lineNum, rowType rowLong, lineType lineLong)
 {
 	lineAxis line = 0;
 	rowAxis row = 0;
 	inputKind kind = 0;
-	inputInfo(&line, &row, &kind, rowLong, lineLong, cue, lineNum);
+	axis firstOpenBox = 0;
+	firstOpenBox = inputInfo(&line, &row, &kind, rowLong, lineLong, cue, lineNum);
 	writeOutSpace(outSpace, line, row, kind);
-	return &outSpace[row][line];
+	//return &outSpace[row][line];
+	return firstOpenBox;
 }
 #undef printf
 #undef scanf
