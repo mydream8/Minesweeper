@@ -24,9 +24,9 @@ typedef short outMineBox;
 typedef enum outBoxStatus
 {
 	nothing = 0,
-	opener,
-	flag,
-	qus
+	opener=9,
+	flag=10,
+	qus=11
 }outBoxStatus;
 
 //¥Ú”°∆Â≈Ã

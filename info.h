@@ -17,3 +17,7 @@
 
 //vs开发环境选0，其它选1
 #define OTHER_CONPILER 0
+//Windows运行环境选1，其他选0
+#define RUN_ON_WINDOWS 1
+//程序名字
+#define PROGRAM_NAME "Minesweeper.exe"
